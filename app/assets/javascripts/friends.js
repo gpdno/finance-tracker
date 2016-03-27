@@ -16,13 +16,12 @@ init_friend_lookup = function(){
     
     $('#friend-lookup-form').on('ajax:error', function(event, xhr, status, error){
         hide_spinner();
-        $('#friend-lookup-results').replaceWith('');
-        $('#friend-lookup-errors').replaceWith('No results found.');
+        $('#friend-lookup-results').replaceWith(' ');
+        $('#friend-lookup-errors').replaceWith('Person was not found.');
     });
 }
 
-
-
-$(document).ready(function() {
-    init_friend_lookup(); 
+//$(document).ready(function() {
+$(document).on('page:change', function() {
+    init_friend_lookup();
 })

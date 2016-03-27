@@ -28,12 +28,12 @@ class User < ActiveRecord::Base
     user_stocks.where(stock_id: stock.id).exists?
   end
   
-  def not_frinds_with?(friend_id)
+  def not_friends_with?(friend_id)
     friendships.where(friend_id: friend_id).count < 1
   end
   
   def except_current_user(users)
-    users.reject { |user| user.id == self.id }
+    users.reject {|user| user.id == self.id}
   end
   
   def self.search(param)
@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
   end
   
   def self.matches(field_name, param)
-    where("lower(#{field_name}) like ?", "%#{param}%")  
+    where("lower(#{field_name}) like ?", "%#{param}%")
   end
   
 end
