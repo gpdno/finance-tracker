@@ -23,6 +23,6 @@ init_stock_lookup = function(){
 
 
 
-$(document).ready(function() {
+$(document).on('page:change', function() {
     init_stock_lookup(); 
 })
